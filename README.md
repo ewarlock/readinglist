@@ -29,5 +29,8 @@ List all books, regardless of read/unread status.
 6: Change Book Read Status
 Change the read/unread status of a single book. Look up the book by ID, then type "read" or "unread" when prompted.
 
+7: Delete Book
+Delete a book from the reading list by ID.
+
 Q: Quit
 Exit the program.
