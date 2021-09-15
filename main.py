@@ -58,10 +58,13 @@ def search_book():
 
 
 def change_read():
-    book = None
-    while book == None:
-        book_id = ui.get_book_id()
-        book = store.get_book_by_id(book_id)  
+    book_id = ui.get_book_id()
+    book = store.get_book_by_id(book_id)
+
+    if book == None:
+        print(f'Invalid Entry: No book with ID: {book_id}.')
+        return
+
     new_read = ui.get_read_value()     
     book.read = new_read 
     book.save()
