@@ -1,5 +1,6 @@
 """ Program to create and manage a list of books that the user wishes to read, and books that the user has read. """
 
+from sqlite3.dbapi2 import DatabaseError, IntegrityError
 from bookstore import Book, BookStore
 from menu import Menu
 import ui
@@ -11,11 +12,14 @@ def main():
     menu = create_menu()
 
     while True:
-        choice = ui.display_menu_get_choice(menu)
-        action = menu.get_action(choice)
-        action()
-        if choice == 'Q':
-            break
+        try:
+            choice = ui.display_menu_get_choice(menu)
+            action = menu.get_action(choice)
+            action()
+            if choice == 'Q':
+                break
+        except:
+            print('\nThe book you have entered is already in the database.\n')
 
 
 def create_menu():
