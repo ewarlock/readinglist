@@ -69,11 +69,16 @@ def change_read():
 
 def delete_book():
     try:
-        book_id = input('Please enter the book ID: ')
+        book_id = ui.get_book_id()
         book = store.get_book_by_id(book_id)
+
+        confirm_deletion = ui.confirm_deletion(book)
+        if confirm_deletion == False:
+            return
+
         book.delete()
     except:
-        print(f'\nError: Book with ID: {book_id} not found.\n')
+        ui.message(f'\nError: Book with ID: {book_id} not found.\n')
     
 
 def quit_program():
