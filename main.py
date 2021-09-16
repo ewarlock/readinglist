@@ -73,7 +73,7 @@ def delete_book():
         book = store.get_book_by_id(book_id)
         book.delete()
     except:
-        print('Error: Book Not Found')
+        print(f'\nError: Book with ID: {book_id} not found.\n')
     
 
 def quit_program():
