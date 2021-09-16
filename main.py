@@ -77,7 +77,7 @@ def delete_book():
             return
 
         book.delete()
-    except:
+    except UnboundLocalError:
         ui.message(f'\nError: Book with ID: {book_id} not found.\n')
     
 
