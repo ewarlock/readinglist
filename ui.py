@@ -65,6 +65,15 @@ def get_read_value():
             print('Type \'read\' or \'not read\'')
 
 
+def confirm_read_status(book):
+    """ Displays message that tells users if they read the book or not.
+     :param books: the book list """
+    if book.read:
+        print(f'\nYou have read {book.title} by: {book.author}\n')
+    else:
+        print(f'\nYou have not read {book.title} by: {book.author}\n')
+
+
 def ask_question(question):
     """ Ask user question
     :param: the question to ask
