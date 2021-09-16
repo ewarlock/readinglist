@@ -62,7 +62,7 @@ def change_read():
     book = store.get_book_by_id(book_id)
 
     if book == None:
-        print(f'Invalid Entry: No book with ID: {book_id}.')
+        print(f'\nInvalid Entry: No book with ID: {book_id}.\n')
         return
 
     new_read = ui.get_read_value()     
