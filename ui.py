@@ -79,3 +79,18 @@ def ask_question(question):
     :param: the question to ask
     :returns: user's response """
     return input(question)
+
+def confirm_deletion(book):
+    """ Ask user to confirm deletion of book in database
+    :param: the book to be deleted
+    :returns: True if user enters y or Y to delete or False if user enters n or N to not delete."""
+    while True:
+        response = input(f'Are you sure you want to delete {book.title} by {book.author}? (Y/N)')
+        if response.upper() == 'Y':
+            print('Book deleted.')
+            return True
+        elif response.upper() == 'N':
+            print('Book was not deleted.')
+            return False
+        else:
+            print('Please enter Y for yes or N for no.')

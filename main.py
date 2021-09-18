@@ -26,6 +26,7 @@ def create_menu():
     menu.add_option('4', 'Show Read Books', show_read_books)
     menu.add_option('5', 'Show All Books', show_all_books)
     menu.add_option('6', 'Change Book Read Status', change_read)
+    menu.add_option('7', 'Delete Book', delete_book)
     menu.add_option('Q', 'Quit', quit_program)
 
     return menu
@@ -69,6 +70,20 @@ def change_read():
     book.read = new_read 
     book.save()
     ui.confirm_read_status(book)
+
+
+def delete_book():
+    try:
+        book_id = ui.get_book_id()
+        book = store.get_book_by_id(book_id)
+
+        confirm_deletion = ui.confirm_deletion(book)
+        if confirm_deletion == False:
+            return
+
+        book.delete()
+    except UnboundLocalError:
+        ui.message(f'\nError: Book with ID: {book_id} not found.\n')
     
 
 def quit_program():
