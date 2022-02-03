@@ -19,6 +19,9 @@ class Book:
 
 
     def save(self):
+        """This function takes information given to it and decides to either call for a book to be updated
+        or call for a new book to be added to the bookstore. Any book being created with the add_book function will
+         have an id of None, which is how the if statement tells whether the book should be added or updated."""
         if self.id:
             self.bookstore._update_book(self)
         else:
