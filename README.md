@@ -5,3 +5,6 @@ Basic python book reading list application. For practicing teamwork and GitHub c
 Uses SQLite3 database to store data. 
 
 Requires at least Python 3.7.
+
+# andrew.abbe@go.minneapolis.edu
+
